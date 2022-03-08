@@ -101,6 +101,9 @@ public class Hra  {
             case "inventar":
                 this.hrac.zobrazInventar();
                 return false;
+            case "zober":
+                this.hrac.zoberPredmet(prikaz);
+                return false;
             default:
                 return false;
         }

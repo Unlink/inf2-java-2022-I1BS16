@@ -74,4 +74,8 @@ public class Miestnost {
 
         System.out.println();
     }
+
+    public Predmet vyberPredmet(String nazov) {
+        return this.predmety.remove(nazov);
+    }
 }

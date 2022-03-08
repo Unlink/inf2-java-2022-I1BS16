@@ -61,4 +61,18 @@ public class Hrac {
 
         System.out.println();
     }
+
+    public void zoberPredmet(Prikaz prikaz) {
+        if (!prikaz.maParameter()) {
+            System.out.println("Zober co?");
+            return;
+        }
+
+        Predmet predmet = this.aktualnaMiestnost.vyberPredmet(prikaz.getParameter());
+        if (predmet != null) {
+            this.inventar.put(predmet.getNazov(), predmet);
+        } else {
+            System.out.println("Tento predmet nieje v miestnosti");
+        }
+    }
 }
