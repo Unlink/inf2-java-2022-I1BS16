@@ -98,6 +98,9 @@ public class Hra  {
             case "prehladaj":
                 this.hrac.getAktualnaMiestnost().vypisPredmety();
                 return false;
+            case "inventar":
+                this.hrac.zobrazInventar();
+                return false;
             default:
                 return false;
         }

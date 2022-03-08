@@ -48,4 +48,17 @@ public class Hrac {
             aktualnaMiestnost.vypisInfo();
         }
     }
+
+    public void zobrazInventar() {
+        if (this.inventar.isEmpty()) {
+            System.out.println("V inventari nemas nic");
+            return;
+        }
+        System.out.println("Predmety v inventari:");
+        for (String nazov : this.inventar.keySet()) {
+            System.out.print(nazov + " ");
+        }
+
+        System.out.println();
+    }
 }
