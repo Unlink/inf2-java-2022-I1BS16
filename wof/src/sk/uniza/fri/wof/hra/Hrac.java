@@ -75,4 +75,19 @@ public class Hrac {
             System.out.println("Tento predmet nieje v miestnosti");
         }
     }
+
+    public void pouzi(Prikaz prikaz) {
+        if (!prikaz.maParameter()) {
+            System.out.println("Pouzi co?");
+            return;
+        }
+
+        Predmet predmet = this.inventar.get(prikaz.getParameter());
+        if (predmet == null) {
+            System.out.println("Nemam " + prikaz.getParameter());
+            return;
+        }
+
+        predmet.pouziSa();
+    }
 }

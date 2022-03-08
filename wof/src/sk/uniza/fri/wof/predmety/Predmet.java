@@ -15,4 +15,8 @@ public class Predmet {
     public String getNazov() {
         return this.nazov;
     }
+
+    public void pouziSa() {
+        System.out.println("Neviem pouzit " + this.nazov);
+    }
 }

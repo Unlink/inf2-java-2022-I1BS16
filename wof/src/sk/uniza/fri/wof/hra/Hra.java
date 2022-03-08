@@ -104,6 +104,9 @@ public class Hra  {
             case "zober":
                 this.hrac.zoberPredmet(prikaz);
                 return false;
+            case "pouzi":
+                this.hrac.pouzi(prikaz);
+                return false;
             default:
                 return false;
         }
