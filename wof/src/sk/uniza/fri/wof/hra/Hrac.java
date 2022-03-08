@@ -14,11 +14,14 @@ import java.util.HashMap;
 public class Hrac {
     private Miestnost aktualnaMiestnost;
     private HashMap<String, Predmet> inventar;
+    private int energia;
 
     public Hrac(Miestnost aktualnaMiestnost) {
+        this.energia = 100;
         this.aktualnaMiestnost = aktualnaMiestnost;
         this.inventar = new HashMap<>();
         this.inventar.put("isic", new Predmet("Isic"));
+        this.inventar.put("hodinky", new Predmet("hodinky"));
     }
 
     public Miestnost getAktualnaMiestnost() {
@@ -46,6 +49,7 @@ public class Hrac {
         } else {
             this.aktualnaMiestnost = novaMiestnost;
             aktualnaMiestnost.vypisInfo();
+            this.energia--;
         }
     }
 
@@ -88,6 +92,10 @@ public class Hrac {
             return;
         }
 
-        predmet.pouziSa();
+        predmet.pouziSa(this);
+    }
+
+    public void zvysEnergiu(int mnozstvo) {
+        this.energia += mnozstvo;
     }
 }
