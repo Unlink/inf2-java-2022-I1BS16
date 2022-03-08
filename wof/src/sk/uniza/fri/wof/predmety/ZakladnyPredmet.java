@@ -11,24 +11,21 @@ import java.util.Date;
  *
  * @author janik
  */
-public class Predmet {
+public class ZakladnyPredmet implements IPredmet {
     private final String nazov;
 
-    public Predmet(String nazov) {
+    public ZakladnyPredmet(String nazov) {
         this.nazov = nazov;
     }
 
+    @Override
     public String getNazov() {
         return this.nazov;
     }
 
+    @Override
     public void pouziSa(Hrac hrac) {
         switch (this.nazov) {
-            case "hodinky":
-                DateFormat dateFormat = new SimpleDateFormat("HH:mm:ss");
-                Date date = new Date();
-                System.out.println(dateFormat.format(date));
-                break;
             case "mineralka":
                 hrac.zvysEnergiu(20);
                 System.out.println("Pouzil si mineralku a zvysila sa ti energia o 20");

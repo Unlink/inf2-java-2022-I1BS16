@@ -1,7 +1,6 @@
 package sk.uniza.fri.wof.mapa;
 
-import sk.uniza.fri.wof.mapa.Miestnost;
-import sk.uniza.fri.wof.predmety.Predmet;
+import sk.uniza.fri.wof.predmety.ZakladnyPredmet;
 
 public class Mapa {
     private Miestnost startovaciaMiestnost;
@@ -23,7 +22,7 @@ public class Mapa {
         Miestnost kancelaria = new Miestnost("kancelaria spravcu pocitacoveho laboratoria");
 
         //Todo pridat minieralku
-        terasa.pridajPredmet(new Predmet("mineralka"));
+        terasa.pridajPredmet(new ZakladnyPredmet("mineralka"));
 
 
         // inicializacia miestnosti = nastavenie vychodov

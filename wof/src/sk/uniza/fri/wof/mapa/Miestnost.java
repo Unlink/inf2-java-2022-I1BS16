@@ -1,6 +1,6 @@
 package sk.uniza.fri.wof.mapa;
 
-import sk.uniza.fri.wof.predmety.Predmet;
+import sk.uniza.fri.wof.predmety.IPredmet;
 
 import java.util.HashMap;
 
@@ -19,7 +19,7 @@ import java.util.HashMap;
 public class Miestnost {
     private final String popisMiestnosti;
     private HashMap<String, Miestnost> vychody;
-    private HashMap<String, Predmet> predmety;
+    private HashMap<String, IPredmet> predmety;
 
     /**
      * Vytvori miestnost popis ktorej je v parametrom.
@@ -58,7 +58,7 @@ public class Miestnost {
         return this.vychody.get(smer);
     }
 
-    public void pridajPredmet(Predmet predmet) {
+    public void pridajPredmet(IPredmet predmet) {
         this.predmety.put(predmet.getNazov(), predmet);
     }
 
@@ -75,7 +75,7 @@ public class Miestnost {
         System.out.println();
     }
 
-    public Predmet vyberPredmet(String nazov) {
+    public IPredmet vyberPredmet(String nazov) {
         return this.predmety.remove(nazov);
     }
 }

@@ -1,7 +1,9 @@
 package sk.uniza.fri.wof.hra;
 
 import sk.uniza.fri.wof.mapa.Miestnost;
-import sk.uniza.fri.wof.predmety.Predmet;
+import sk.uniza.fri.wof.predmety.Hodinky;
+import sk.uniza.fri.wof.predmety.IPredmet;
+import sk.uniza.fri.wof.predmety.ZakladnyPredmet;
 import sk.uniza.fri.wof.prikazy.Prikaz;
 
 import java.util.HashMap;
@@ -13,15 +15,15 @@ import java.util.HashMap;
  */
 public class Hrac {
     private Miestnost aktualnaMiestnost;
-    private HashMap<String, Predmet> inventar;
+    private HashMap<String, IPredmet> inventar;
     private int energia;
 
     public Hrac(Miestnost aktualnaMiestnost) {
         this.energia = 100;
         this.aktualnaMiestnost = aktualnaMiestnost;
         this.inventar = new HashMap<>();
-        this.inventar.put("isic", new Predmet("Isic"));
-        this.inventar.put("hodinky", new Predmet("hodinky"));
+        this.inventar.put("isic", new ZakladnyPredmet("Isic"));
+        this.inventar.put("hodinky", new Hodinky());
     }
 
     public Miestnost getAktualnaMiestnost() {
@@ -72,7 +74,7 @@ public class Hrac {
             return;
         }
 
-        Predmet predmet = this.aktualnaMiestnost.vyberPredmet(prikaz.getParameter());
+        IPredmet predmet = this.aktualnaMiestnost.vyberPredmet(prikaz.getParameter());
         if (predmet != null) {
             this.inventar.put(predmet.getNazov(), predmet);
         } else {
@@ -86,7 +88,7 @@ public class Hrac {
             return;
         }
 
-        Predmet predmet = this.inventar.get(prikaz.getParameter());
+        IPredmet predmet = this.inventar.get(prikaz.getParameter());
         if (predmet == null) {
             System.out.println("Nemam " + prikaz.getParameter());
             return;
