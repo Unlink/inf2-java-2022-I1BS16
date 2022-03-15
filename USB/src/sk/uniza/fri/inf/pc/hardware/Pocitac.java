@@ -1,5 +1,7 @@
 package sk.uniza.fri.inf.pc.hardware;
 
+import sk.uniza.fri.inf.pc.hardware.zariadenia.USBHub;
+
 /**
  * 14. 3. 2022 - 13:39
  *
@@ -7,36 +9,25 @@ package sk.uniza.fri.inf.pc.hardware;
  */
 public class Pocitac {
 
-    private UsbPort[] porty;
+    private USBHub hub;
 
     public Pocitac(int pocetPortov) {
-        this.porty = new UsbPort[pocetPortov];
-        for (int i = 0; i < this.porty.length; i++) {
-            this.porty[i] = new UsbPort();
-        }
+        this.hub = new USBHub(pocetPortov);
     }
 
     public int getPocetPortov() {
-        return this.porty.length;
+        return this.hub.getPocetPortov();
     }
 
     public UsbPort getUsbPort(int index) {
-        return this.porty[index];
+        return this.hub.getUsbPort(index);
     }
 
     public UsbPort getVolnyUsbPort() {
-        for (UsbPort usbPort : porty) {
-            if (!usbPort.jeObsadeny()) {
-                return usbPort;
-            }
-        }
-        return null;
+        return this.hub.getVolnyUsbPort();
     }
 
     public void vypisVsetkyZariadenia() {
-        for (int i = 0; i < this.porty.length; i++) {
-            UsbPort usbPort = this.porty[i];
-            System.out.printf("[%d]\t%s\n", i, usbPort);
-        }
+        this.hub.vypisVsetkyZariadenia();
     }
 }

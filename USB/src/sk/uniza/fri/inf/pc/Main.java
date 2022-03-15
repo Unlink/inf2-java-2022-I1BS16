@@ -1,5 +1,7 @@
-package sk.uniza.fri.inf.pc.hardware;
+package sk.uniza.fri.inf.pc;
 
+import sk.uniza.fri.inf.pc.hardware.Pocitac;
+import sk.uniza.fri.inf.pc.hardware.UsbPort;
 import sk.uniza.fri.inf.pc.hardware.zariadenia.Klavesnica;
 import sk.uniza.fri.inf.pc.hardware.zariadenia.Mys;
 
