@@ -1,7 +1,5 @@
 package sk.uniza.fri.inf.pc.hardware;
 
-import sk.uniza.fri.inf.pc.hardware.zariadenia.USBHub;
-
 /**
  * 14. 3. 2022 - 13:39
  *
@@ -29,5 +27,9 @@ public class Pocitac {
 
     public void vypisVsetkyZariadenia() {
         this.hub.vypisVsetkyZariadenia();
+    }
+
+    public void vypisVsetkyMysi() {
+        
     }
 }
