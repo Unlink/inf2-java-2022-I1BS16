@@ -3,6 +3,7 @@ package sk.uniza.fri.inf.pc;
 import sk.uniza.fri.inf.pc.hardware.Pocitac;
 import sk.uniza.fri.inf.pc.hardware.UsbPort;
 import sk.uniza.fri.inf.pc.hardware.zariadenia.Klavesnica;
+import sk.uniza.fri.inf.pc.hardware.zariadenia.KlavesnicaSMysou;
 import sk.uniza.fri.inf.pc.hardware.zariadenia.Mys;
 import sk.uniza.fri.inf.pc.hardware.USBHub;
 
@@ -38,5 +39,14 @@ public class Main {
         USBHub usbHubMaly = new USBHub("HUE-S2B USB 3.0", "AXAGON", 4);
         usbHubMaly.pripojDoUsbPortu(usbHub.getUsbPort(2));
         mojNotebook.vypisVsetkyZariadenia();
+
+        System.out.println("-----------------------");
+
+        KlavesnicaSMysou klavesnicaSMysou = new KlavesnicaSMysou("aaa", "bbb", true, 5, false);
+        klavesnicaSMysou.pripojDoUsbPortu(usbHub.getUsbPort(3));
+
+        mojNotebook.vypisVsetkyZariadenia();
+        mojNotebook.vypisVsetkyMysi();
+
     }
 }

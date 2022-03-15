@@ -1,5 +1,7 @@
 package sk.uniza.fri.inf.pc.hardware;
 
+import sk.uniza.fri.inf.pc.hardware.zariadenia.Mys;
+
 /**
  * 14. 3. 2022 - 13:39
  *
@@ -30,6 +32,17 @@ public class Pocitac {
     }
 
     public void vypisVsetkyMysi() {
-        
+        this.vypisVsetkyMysi(this.hub);
+    }
+
+    private void vypisVsetkyMysi(USBHub hub) {
+        for (int i = 0; i < hub.getPocetPortov(); i++) {
+            IUsbZariadenie usbZariadenie = hub.getUsbPort(i).getUsbZariadenie();
+            if (usbZariadenie instanceof Mys) {
+                System.out.println(usbZariadenie);
+            } else if (usbZariadenie instanceof USBHub) {
+                this.vypisVsetkyMysi((USBHub)usbZariadenie);
+            }
+        }
     }
 }
