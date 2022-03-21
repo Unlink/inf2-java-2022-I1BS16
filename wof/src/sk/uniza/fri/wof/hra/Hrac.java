@@ -3,6 +3,7 @@ package sk.uniza.fri.wof.hra;
 import sk.uniza.fri.wof.mapa.Miestnost;
 import sk.uniza.fri.wof.predmety.Hodinky;
 import sk.uniza.fri.wof.predmety.IPredmet;
+import sk.uniza.fri.wof.predmety.IStatickyPredmet;
 import sk.uniza.fri.wof.predmety.ZakladnyPredmet;
 import sk.uniza.fri.wof.prikazy.Prikaz;
 
@@ -74,8 +75,11 @@ public class Hrac {
             return;
         }
 
-        IPredmet predmet = this.aktualnaMiestnost.vyberPredmet(prikaz.getParameter());
-        if (predmet != null) {
+        IPredmet predmet = this.aktualnaMiestnost.najdiPredmet(prikaz.getParameter());
+        if (predmet instanceof IStatickyPredmet) {
+            System.out.println("Nekradni");
+        } else if (predmet != null) {
+            this.aktualnaMiestnost.vyberPredmet(predmet.getNazov());
             this.inventar.put(predmet.getNazov(), predmet);
         } else {
             System.out.println("Tento predmet nieje v miestnosti");
@@ -89,6 +93,14 @@ public class Hrac {
         }
 
         IPredmet predmet = this.inventar.get(prikaz.getParameter());
+        if (predmet == null) {
+            predmet = this.aktualnaMiestnost.najdiPredmet(prikaz.getParameter());
+            if ((predmet != null) && !(predmet instanceof IStatickyPredmet)) {
+                System.out.println("Najskôr ho zober a az potom pouzi");
+                return;
+            }
+        }
+
         if (predmet == null) {
             System.out.println("Nemam " + prikaz.getParameter());
             return;

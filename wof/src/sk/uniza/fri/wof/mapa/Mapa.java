@@ -21,6 +21,12 @@ public class Mapa {
         Miestnost labak = new Miestnost("pocitacove laboratorium");
         Miestnost kancelaria = new Miestnost("kancelaria spravcu pocitacoveho laboratoria");
 
+        Miestnost chodbaPodzemie = new Miestnost("chodba na podzemii");
+        Miestnost chodba1Poschode = new Miestnost("chodba 1. poschodi");
+        Miestnost chodba2Poschode = new Miestnost("chodba 2. poschodi");
+
+        Vytah vytah = new Vytah(chodbaPodzemie, terasa, chodba1Poschode, chodba2Poschode);
+
         //Todo pridat minieralku
         terasa.pridajPredmet(new ZakladnyPredmet("mineralka"));
 

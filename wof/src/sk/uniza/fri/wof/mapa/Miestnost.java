@@ -78,4 +78,8 @@ public class Miestnost {
     public IPredmet vyberPredmet(String nazov) {
         return this.predmety.remove(nazov);
     }
+
+    public IPredmet najdiPredmet(String nazov) {
+        return this.predmety.get(nazov);
+    }
 }
