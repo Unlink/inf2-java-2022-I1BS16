@@ -26,4 +26,8 @@ public abstract class Policko {
     protected void setPozicia(Vector2 pozicia) {
         this.pozicia = pozicia;
     }
+
+    public boolean koliduje(Policko policko) {
+        return this.pozicia.equals(policko.pozicia);
+    }
 }

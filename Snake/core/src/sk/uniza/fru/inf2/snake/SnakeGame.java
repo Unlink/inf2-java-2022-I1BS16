@@ -10,6 +10,6 @@ public class SnakeGame extends Game {
 
 	@Override
 	public void create() {
-		this.setScreen(new HernaObrazovka());
+		this.setScreen(new HernaObrazovka(this));
 	}
 }
