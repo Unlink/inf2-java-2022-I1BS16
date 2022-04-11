@@ -2,20 +2,19 @@ package sk.uniza.fri.wof.predmety;
 
 import sk.uniza.fri.wof.hra.Hrac;
 
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
-import java.util.Date;
-
 /**
  * 28. 2. 2021 - 21:14
  *
  * @author janik
  */
-public class ZakladnyPredmet implements IPredmet {
-    private final String nazov;
+public class Jedlo implements IPredmet {
 
-    public ZakladnyPredmet(String nazov) {
+    private final String nazov;
+    private final int energia;
+
+    public Jedlo(String nazov, int energia) {
         this.nazov = nazov;
+        this.energia = energia;
     }
 
     @Override
@@ -25,6 +24,7 @@ public class ZakladnyPredmet implements IPredmet {
 
     @Override
     public void pouziSa(Hrac hrac) {
-        System.out.println("Neviem pouzit " + this.nazov);
+        hrac.zvysEnergiu(energia);
+        System.out.println("Pouzil si " + this.nazov + " a zvysila sa ti energia o " + this.energia);
     }
 }

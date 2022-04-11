@@ -1,5 +1,6 @@
 package sk.uniza.fri.wof.mapa;
 
+import sk.uniza.fri.wof.predmety.Jedlo;
 import sk.uniza.fri.wof.predmety.ZakladnyPredmet;
 
 public class Mapa {
@@ -28,7 +29,7 @@ public class Mapa {
         Vytah vytah = new Vytah(chodbaPodzemie, terasa, chodba1Poschode, chodba2Poschode);
 
         //Todo pridat minieralku
-        terasa.pridajPredmet(new ZakladnyPredmet("mineralka"));
+        terasa.pridajPredmet(new Jedlo("mineralka", 20));
 
 
         // inicializacia miestnosti = nastavenie vychodov
