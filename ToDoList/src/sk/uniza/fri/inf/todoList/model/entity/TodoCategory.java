@@ -5,10 +5,12 @@
  */
 package sk.uniza.fri.inf.todoList.model.entity;
 
+import java.io.Serializable;
+
 /**
  * @author Unlink
  */
-public class TodoCategory {
+public class TodoCategory implements Serializable {
 
     private final String name;
 

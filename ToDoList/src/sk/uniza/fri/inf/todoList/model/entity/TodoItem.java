@@ -5,20 +5,22 @@
  */
 package sk.uniza.fri.inf.todoList.model.entity;
 
+import java.io.Serializable;
 import java.time.Instant;
 import java.util.Date;
 
 /**
  * @author Unlink
  */
-public class TodoItem {
+public class TodoItem implements Serializable {
 
-    private String title;
+    public static final long serialVersionUID = -5591297454067675398l;
+
+    private String description;
     private long created;
     private long done;
-    private String description;
+    private String title;
     private TodoCategory category;
-
 
     public TodoItem(String title, String description, TodoCategory category) {
         created = Date.from(Instant.now()).getTime();
@@ -75,5 +77,16 @@ public class TodoItem {
         return done;
     }
 
+    public void setCreated(long created) {
+        this.created = created;
+    }
+
+    public void setDone(long done) {
+        this.done = done;
+    }
+
+    public boolean test() {
+        return true;
+    }
 
 }
