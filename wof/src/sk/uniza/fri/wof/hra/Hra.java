@@ -1,7 +1,7 @@
 package sk.uniza.fri.wof.hra;
 
+import sk.uniza.fri.wof.mapa.IMapa;
 import sk.uniza.fri.wof.mapa.Mapa;
-import sk.uniza.fri.wof.mapa.Miestnost;
 import sk.uniza.fri.wof.prikazy.Parser;
 import sk.uniza.fri.wof.prikazy.Prikaz;
 
@@ -27,7 +27,7 @@ import sk.uniza.fri.wof.prikazy.Prikaz;
  
 public class Hra  {
     private final Parser parser;
-    private final Mapa mapa;
+    private final IMapa mapa;
     private Hrac hrac;
     
     /**

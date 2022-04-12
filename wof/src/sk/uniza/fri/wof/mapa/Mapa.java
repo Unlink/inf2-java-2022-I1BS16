@@ -1,9 +1,8 @@
 package sk.uniza.fri.wof.mapa;
 
 import sk.uniza.fri.wof.predmety.Jedlo;
-import sk.uniza.fri.wof.predmety.ZakladnyPredmet;
 
-public class Mapa {
+public class Mapa implements IMapa {
     private Miestnost startovaciaMiestnost;
 
     public Mapa() {
@@ -48,6 +47,7 @@ public class Mapa {
         this.startovaciaMiestnost = terasa;  // startovacia miestnost hry
     }
 
+    @Override
     public Miestnost getStartovaciaMiestnost() {
         return this.startovaciaMiestnost;
     }
