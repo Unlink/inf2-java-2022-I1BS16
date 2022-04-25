@@ -2,8 +2,11 @@ package sk.uniza.fri.wof.hra;
 
 import sk.uniza.fri.wof.mapa.IMapa;
 import sk.uniza.fri.wof.mapa.Mapa;
+import sk.uniza.fri.wof.mapa.NacitavacMapy;
 import sk.uniza.fri.wof.prikazy.Parser;
 import sk.uniza.fri.wof.prikazy.Prikaz;
+
+import java.io.IOException;
 
 /**
  * Trieda sk.uniza.fri.wof.hra.Hra je hlavna trieda aplikacie "World of FRI".
@@ -33,9 +36,9 @@ public class Hra  {
     /**
      * Vytvori a inicializuje hru.
      */
-    public Hra() {
+    public Hra() throws IOException {
         this.parser = new Parser();
-        this.mapa = new Mapa();
+        this.mapa = new NacitavacMapy();
         this.hrac = new Hrac(this.mapa.getStartovaciaMiestnost());
     }
 
