@@ -22,17 +22,34 @@ public class YMLRiadok {
      */
     private boolean jePrvokZoznamu;
 
+    public YMLRiadok(String key, String value, int odsadenie, boolean jePrvokZoznamu) {
+        this.kluc = key;
+        this.hodnota = value;
+        this.odsadenie = odsadenie;
+        this.jePrvokZoznamu = jePrvokZoznamu;
+    }
+
+    public int getOdsadenie() {
+        return this.odsadenie;
+    }
+
+    public String getKluc() {
+        return this.kluc;
+    }
+
+    public String getHodnota() {
+        return this.hodnota;
+    }
+
+    public boolean isPrvokZoznamu() {
+        return this.jePrvokZoznamu;
+    }
     /**
      * Vypise riadok tak, ako bol pôvodne v subore
      * @return
      */
     @Override
     public String toString() {
-        return "YMLRiadok{" +
-                "kluc='" + kluc + '\'' +
-                ", hodnota='" + hodnota + '\'' +
-                ", odsadenie=" + odsadenie +
-                ", jePrvokZoznamu=" + jePrvokZoznamu +
-                '}';
+        return " ".repeat(this.odsadenie) + (jePrvokZoznamu ? "- " : "") + kluc + (hodnota != null ? ": " + hodnota : "");
     }
 }
