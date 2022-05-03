@@ -47,11 +47,9 @@ public class HlavneOkno {
                 JLabel label = new JLabel();
                 label.setText(value.getMeno() + " " + value.getPriezvisko());
                 if (isSelected) {
-                    label.setBackground(list.getSelectionBackground());
-                    label.setForeground(list.getSelectionForeground());
+                    label.setForeground(Color.BLUE);
                 } else {
-                    label.setBackground(list.getBackground());
-                    label.setForeground(list.getForeground());
+                    label.setForeground(Color.BLACK);
                 }
                 return label;
             }
