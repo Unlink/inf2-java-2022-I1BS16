@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="sk.uniza.fri.inf.gui.HlavneOkno">
+  <grid id="27dc6" binding="hlavnyPanel" layout-manager="BorderLayout" hgap="0" vgap="0">
+    <constraints>
+      <xy x="20" y="20" width="671" height="543"/>
+    </constraints>
+    <properties/>
+    <border type="none"/>
+    <children>
+      <component id="6c945" class="javax.swing.JList" binding="studentiList">
+        <constraints border-constraint="Center"/>
+        <properties>
+          <minimumSize width="300" height="200"/>
+          <preferredSize width="300" height="200"/>
+        </properties>
+      </component>
+      <grid id="e2a1b" layout-manager="GridBagLayout">
+        <constraints border-constraint="East"/>
+        <properties/>
+        <border type="none"/>
+        <children>
+          <component id="80676" class="javax.swing.JButton" binding="zmazButton" default-binding="true">
+            <constraints>
+              <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="1" fill="1" indent="0" use-parent-layout="false"/>
+              <gridbag weightx="0.0" weighty="100.0"/>
+            </constraints>
+            <properties>
+              <text value="Zmaz"/>
+            </properties>
+          </component>
+          <component id="68b27" class="javax.swing.JButton" binding="pridajButton" default-binding="true">
+            <constraints>
+              <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="1" fill="1" indent="0" use-parent-layout="false"/>
+              <gridbag weightx="0.0" weighty="1.0"/>
+            </constraints>
+            <properties>
+              <text value="Pridaj"/>
+              <verticalAlignment value="0"/>
+            </properties>
+          </component>
+          <component id="e2369" class="javax.swing.JButton" binding="upravButton" default-binding="true">
+            <constraints>
+              <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="1" fill="1" indent="0" use-parent-layout="false"/>
+              <gridbag weightx="0.0" weighty="1.0"/>
+            </constraints>
+            <properties>
+              <text value="Uprav"/>
+              <verticalAlignment value="0"/>
+            </properties>
+          </component>
+        </children>
+      </grid>
+    </children>
+  </grid>
+</form>
