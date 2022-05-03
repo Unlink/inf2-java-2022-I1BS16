@@ -40,11 +40,12 @@ public class HlavneOkno {
         this.zoznamStudentov.addElement(new Student("Janko", "Hrasko", 19));
         this.zoznamStudentov.addElement(new Student("Ferko", "Hrasko", 19));
         this.studentiList.setModel(this.zoznamStudentov);
-        /*this.studentiList.setCellRenderer(new ListCellRenderer<Student>() {
+
+        this.studentiList.setCellRenderer(new ListCellRenderer<Student>() {
             @Override
             public Component getListCellRendererComponent(JList list, Student value, int index, boolean isSelected, boolean cellHasFocus) {
-                Label label = new Label();
-                label.setText(value.getMeno() + value.getPriezvisko());
+                JLabel label = new JLabel();
+                label.setText(value.getMeno() + " " + value.getPriezvisko());
                 if (isSelected) {
                     label.setBackground(list.getSelectionBackground());
                     label.setForeground(list.getSelectionForeground());
@@ -54,7 +55,7 @@ public class HlavneOkno {
                 }
                 return label;
             }
-        });*/
+        });
         zmazButton.addActionListener(e -> {
             List list = studentiList.getSelectedValuesList();
             for (Object o : list) {
